@@ -111,6 +111,12 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  let boolean = true;
+  arr.forEach(str => {
+      !str.includes(target) ? boolean = false : '';
+  })
+//   console.log(boolean);
+  return boolean;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,6 +133,16 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
   // Solution code here...
+  let result = arr.map(subArr => {
+    let filteredSubArr = subArr.filter(str => {
+        if (!str.includes('Brook')){
+            return str;
+        }
+    })
+    return filteredSubArr;
+})
+//   console.log(result);
+return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
